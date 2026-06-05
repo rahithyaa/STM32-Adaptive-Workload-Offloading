@@ -99,9 +99,9 @@ Online calibration (calib_b) corrects timing predictions at runtime.
 
 STM32-Adaptive-Workload-Offloading/
 
-├── caseA_finalcode.docx    # Case A: Bare-metal baseline firmware
-├── caseB_finalcode.docx    # Case B: FreeRTOS local processing firmware
-├── caseC_code.docx         # Case C: Adaptive offloading firmware
+├── caseA_finalcode.docx    # Bare-metal implementation source code
+├── caseB_finalcode.docx    # FreeRTOS implementation source code
+├── caseC_code.docx         # Adaptive offloading implementation source code
 ├── gateway.py             # Python FFT offload gateway
 └── README.md
 ```
