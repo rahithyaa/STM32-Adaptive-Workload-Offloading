@@ -96,17 +96,13 @@ Online calibration (calib_b) corrects timing predictions at runtime.
 ## Project Structure
 
 ```text
+
 STM32-Adaptive-Workload-Offloading/
-│
-├── Core/
-│   ├── main.c              # Initialization, ISR, clock configuration
-│   ├── safety_task.c       # Fault detection and safety monitoring
-│   ├── processing_task.c   # FFT processing and offload handling
-│   └── cost_model.c        # Energy cost model and calibration
-│
-├── Gateway/
-│   └── gateway.py          # Python edge gateway (NumPy FFT)
-│
+
+├── caseA_finalcode.docx    # Case A: Bare-metal baseline firmware
+├── caseB_finalcode.docx    # Case B: FreeRTOS local processing firmware
+├── caseC_code.docx         # Case C: Adaptive offloading firmware
+├── gateway.py             # Python FFT offload gateway
 └── README.md
 ```
 
