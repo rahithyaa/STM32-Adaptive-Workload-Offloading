@@ -1,0 +1,32 @@
+#include "app_globals.h"
+float bufferA[WINDOW_SIZE];
+float bufferB[WINDOW_SIZE];
+volatile float  *fillBuffer    = bufferA;
+volatile float  *processBuffer = bufferB;
+volatile uint16_t sampleIndex  = 0;
+osSemaphoreId windowReadySem = NULL;
+osSemaphoreId safetyDoneSem  = NULL;
+osThreadId metricsTaskHandle = NULL;
+SemaphoreHandle_t windowReadySem_handle = NULL;
+volatile uint32_t g_T_local_predicted_us;
+volatile uint8_t       g_faultFlag           = 0;
+volatile float         g_peakAmplitude       = 0.0f;
+volatile OffloadMode_t g_mode                = MODE_LOCAL;
+volatile float         g_rms_current         = 0.0f;
+//volatile uint32_t g_T_local_predicted_us     = 527;
+volatile uint32_t g_T_local_actual_us        = 0;
+volatile uint32_t g_T_tx_actual_us           = 0;
+volatile uint32_t g_T_compute_python_us      = 0;
+volatile uint32_t g_T_offload_actual_us      = 0;
+volatile uint32_t g_lastRttUs                = 0;
+volatile uint32_t g_missedDeadlines          = 0;
+volatile uint32_t g_offloadAttempts          = 0;
+volatile uint32_t g_offloadSuccesses         = 0;
+volatile uint32_t g_windowCount              = 0;
+volatile uint16_t g_batteryAdc               = 0;
+volatile float    g_calib_b                  = 0.0f;
+volatile float    g_T_fft_calib_us           = 0.0f;
+volatile uint32_t g_rttHistory[3]            = {0,0,0};
+volatile uint8_t  g_rttIdx                   = 0;
+volatile uint32_t g_lastLoggedWindow = 0;
+
